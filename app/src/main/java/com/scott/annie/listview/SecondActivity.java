@@ -24,9 +24,9 @@ public class SecondActivity extends AppCompatActivity {
 
 
         list2 = (ListView) findViewById(R.id.list2);
-        String choice = (getIntent().getStringExtra("position"));
+        String position = (getIntent().getStringExtra("position"));
 
-        switch (choice) {
+        switch (position) {
 
             case "0": {
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, India);
