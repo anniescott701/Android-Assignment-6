@@ -10,6 +10,9 @@ import android.widget.ListView;
 
 public class SecondActivity extends AppCompatActivity {
     String India[] = {"Satna", "Mumbai", "Bhopal", "Banglore"};
+    String America[] = {"Newyork","Chicago", "Boston", "Washington"};
+    String China[] = {"Beijing", "Shanghai", "Shenzen","Tianjin"};
+    String France[] = {"Paris", "Lyon", "Canes","Colmar"};
 
     ListView list2;
 
@@ -21,10 +24,39 @@ public class SecondActivity extends AppCompatActivity {
 
 
         list2 = (ListView) findViewById(R.id.list2);
+        String choice = (getIntent().getStringExtra("position"));
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, India);
-        list2.setAdapter(arrayAdapter);
+        switch (choice) {
 
+            case "0": {
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, India);
+                list2.setAdapter(arrayAdapter);
+                break;
+            }
+
+
+            case "1": {
+                ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, America);
+                list2.setAdapter(arrayAdapter1);
+                break;
+
+            }
+            case "2": {
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, China);
+                list2.setAdapter(arrayAdapter);
+                break;
+
+            }
+            case "3": {
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, France);
+                list2.setAdapter(arrayAdapter);
+                break;
+
+
+            }
+
+
+        }
     }
 }
 
